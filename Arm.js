@@ -1,4 +1,5 @@
 let sum = 0;
+const prompt = require("prompt-sync")();
 const number = prompt('Enter a three-digit positive integer: ');
 
 let temp = number;
