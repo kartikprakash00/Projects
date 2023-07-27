@@ -1,12 +1,12 @@
 /*Q1. Create an Array of salaries. 
 Do the sum of salaries greater than 10000.*/
 const salaries = [15000, 12000, 8000, 25000, 9500, 5000, 35000];
-const sum = salaries.reduce((accumulator, currentValue) => {
+const sum = salaries.reduce((add, currentValue) => {
     if (currentValue > 10000) {
-        return accumulator + currentValue;
+        return add + currentValue;
     }
     else {
-        return accumulator;
+        return add;
     }
 }, 0)
 console.log("Sum of Salaries greater than 10000: ", sum);
