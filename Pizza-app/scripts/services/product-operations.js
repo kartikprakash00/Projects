@@ -10,6 +10,17 @@ import Product from '../models/product.js';
 import makeNetworkCall from './api-client.js';
 
 const productOperations = {
+    products: [],
+    search(pizzaId) {
+        const product = this.products.find(currentProduct => currentProduct.id == pizzaId);
+        console.log('Product found', product);
+        product.isAddedInCart = true;
+        console.log('Array is', this.products);
+    },
+    getProductsInCart() {
+        const productBasket = this.products.filter(product => product.isAddedInCart);
+        return productBasket;
+    },
     async loadProducts() {
         const pizzas = await makeNetworkCall();
         const pizzaArray = pizzas['Vegetarian'];
@@ -19,6 +30,7 @@ const productOperations = {
             return currentPizza;
         })
         console.log('Product Array ', productsArray);
+        this.products = productsArray;
         return productsArray;  // Wrap in Promise
     },
     sortProducts() {
