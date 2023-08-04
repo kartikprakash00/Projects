@@ -37,10 +37,9 @@ function pizzaCard(pizza) {
     const image = document.createElement('img');
     image.src = pizza.url;
     image.className = 'card-img-top';
-    divCard.appendChild(image);
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
-    divCard.appendChild(cardBody);
+    divCard.append(image, cardBody);
     const title = document.createElement('h5');
     title.className = 'card-title';
     title.innerText = pizza.name;
