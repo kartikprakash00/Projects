@@ -20,5 +20,12 @@ async function makeNetworkCall() {
     // }).catch(err=>{
     //     console.log('Error is ', err);
     // })
+    // }
+    // export default makeNetworkCall;
+
+    // export default async function makeNetworkCall() {
+    //     const response = await fetch(URL);
+    //     const { Vegetarian } = await response.json();
+    //     return Vegetarian;
 }
 export default makeNetworkCall;
